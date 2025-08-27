@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react';
+import { type PropsWithChildren } from 'react';
 
 export type Theme = 'dark' | 'light';
 
@@ -7,6 +7,4 @@ export type ThemeContextType = {
     toggleTheme: () => void;
 };
 
-export type ThemeProviderProps = {
-    children: ReactNode;
-};
+export type ThemeProviderProps = PropsWithChildren;

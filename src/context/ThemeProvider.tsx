@@ -3,7 +3,7 @@ import { type Theme, type ThemeContextType, type ThemeProviderProps } from '../t
 
 export const ThemeContext = createContext<ThemeContextType>({} as ThemeContextType);
 
-export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
+export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     const [theme, setTheme] = useState<Theme>(() => {
         const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
         return prefersDarkMode ? 'dark' : 'light';

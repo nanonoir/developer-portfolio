@@ -3,7 +3,7 @@ import { type LanguageContextType, type Language, type LanguageProviderProps } f
 
 export const LanguageContext = createContext<LanguageContextType>({} as LanguageContextType);
 
-export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
+export const LanguageProvider= ({ children }: LanguageProviderProps) => {
     const [language, setLanguage] = useState<Language>(() => {
         
         const userPreferredLanguages = navigator.languages;

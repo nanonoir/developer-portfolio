@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react';
+import { type PropsWithChildren } from 'react';
 
 export type Language = 'es' | 'en';
 
@@ -7,7 +7,5 @@ export type LanguageContextType = {
     setLanguage: (lang: Language) => void;
 };
 
-export type LanguageProviderProps = {
-    children: ReactNode;
-};
+export type LanguageProviderProps = PropsWithChildren;
 
