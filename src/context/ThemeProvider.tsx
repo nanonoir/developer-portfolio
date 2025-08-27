@@ -14,7 +14,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
     const handleChange = (e: MediaQueryListEvent) => {
-        setTheme(e.matches ? theme);
+        setTheme(e.matches ? 'dark' : 'light');
     };
 
     mediaQuery.addEventListener('change', handleChange);
