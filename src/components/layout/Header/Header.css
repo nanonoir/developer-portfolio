@@ -1,0 +1,27 @@
+.header-container {
+  @apply flex justify-between items-center p-4 sm:p-6 transition-colors duration-300;
+}
+
+.header-container {
+  @apply bg-gray-100 text-gray-800;
+}
+
+.dark .header-container {
+  @apply bg-gray-900 text-gray-100;
+}
+
+.header-nav {
+  @apply hidden sm:flex items-center gap-4;
+}
+
+.nav-link {
+  @apply hover:text-sky-500;
+}
+
+.dark .nav-link {
+  @apply dark:hover:text-sky-400;
+}
+
+.header-title {
+  @apply font-bold text-xl;
+}

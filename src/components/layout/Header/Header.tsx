@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import type { Language, NavContent } from "../../../types";
-import { LanguageContext, ThemeContext } from "../../../context";
+import { LanguageContext } from "../../../context";
 import { ThemeSwitcher } from "../../theme";
 import { LanguageSelector } from "../../language";
+import { NavHashLink } from "react-router-hash-link";
 
 const content: Record<Language, NavContent> = {
     es: {
@@ -18,20 +19,18 @@ const content: Record<Language, NavContent> = {
 };
 
 export const Header = () => {
-    const { theme } = useContext(ThemeContext);
     const { language } = useContext(LanguageContext);
-
     const currentContent = content[language];
 
     return (
-        <header className={`header ${theme}`}>
-            <nav>
-                <a href="#about">{currentContent.about}</a>
-                <a href="#portfolio">{currentContent.portfolio}</a>
-                <a href="#contact">{currentContent.contact}</a>
+        <header className={`header-container`}>
+            <nav className="header-nav">
+                <NavHashLink smooth to="#about" className="nav-link">{currentContent.about}</NavHashLink>
+                <NavHashLink smooth to="#portfolio" className="nav-link">{currentContent.portfolio}</NavHashLink>
+                <NavHashLink smooth to="#contact" className="nav-link">{currentContent.contact}</NavHashLink>
             </nav>
 
-            <div>
+            <div className="flex items-center gap-4">
                 <ThemeSwitcher />
                 <LanguageSelector />
             </div>
