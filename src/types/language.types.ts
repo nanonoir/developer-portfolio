@@ -9,3 +9,8 @@ export type LanguageContextType = {
 
 export type LanguageProviderProps = PropsWithChildren;
 
+export type NavContent = {
+  about: string;
+  portfolio: string;
+  contact: string;
+};
