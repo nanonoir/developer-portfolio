@@ -4,6 +4,7 @@ import { LanguageContext } from "../../../context";
 import { ThemeSwitcher } from "../../theme";
 import { LanguageSelector } from "../../language";
 import { NavHashLink } from "react-router-hash-link";
+import { DownloadCVButton } from "../../ui/DownloadCVButton/DownloadCVButton";
 
 const content: Record<Language, NavContent> = {
     es: {
@@ -31,6 +32,7 @@ export const Header = () => {
             </nav>
 
             <div className="flex items-center gap-4">
+                <DownloadCVButton />
                 <ThemeSwitcher />
                 <LanguageSelector />
             </div>

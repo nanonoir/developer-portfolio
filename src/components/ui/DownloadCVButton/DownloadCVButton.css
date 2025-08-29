@@ -1,0 +1,7 @@
+.button-resume {
+  @apply font-bold py-2 px-4 rounded-lg transition-transform duration-200;
+  
+  @apply bg-sky-600 text-white;
+
+  @apply hover:bg-sky-500 hover:scale-105;
+}
