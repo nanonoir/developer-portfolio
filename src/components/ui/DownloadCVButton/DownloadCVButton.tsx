@@ -10,7 +10,7 @@ export const DownloadCVButton = () => {
   const { language } = useContext(LanguageContext);
 
   return (
-    <a 
+    <a
       href="/CV_Nahuel_Noir_EN.pdf"
       download="CV_Nahuel_Noir_EN.pdf"
       target="_blank" 
