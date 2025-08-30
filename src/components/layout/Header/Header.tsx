@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import type { Language, NavContent } from "../../../types";
 import { LanguageContext } from "../../../context";
 import { ThemeSwitcher } from "../../theme";
@@ -22,19 +22,34 @@ const content: Record<Language, NavContent> = {
 export const Header = () => {
     const { language } = useContext(LanguageContext);
     const currentContent = content[language];
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+    };
 
     return (
         <header className={`header-container`}>
+            <NavHashLink smooth to="#home" className="nav-link">
+                {"<Nahuel Nicolas Noir />"}
+            </NavHashLink>
+
             <nav className="header-nav">
-                <NavHashLink smooth to="#about" className="nav-link">{currentContent.about}</NavHashLink>
-                <NavHashLink smooth to="#portfolio" className="nav-link">{currentContent.portfolio}</NavHashLink>
-                <NavHashLink smooth to="#contact" className="nav-link">{currentContent.contact}</NavHashLink>
+                <NavHashLink smooth to="#about" className="nav-link" onClick={closeMenu}>{currentContent.about}</NavHashLink>
+                <NavHashLink smooth to="#portfolio" className="nav-link" onClick={closeMenu}>{currentContent.portfolio}</NavHashLink>
+                <NavHashLink smooth to="#contact" className="nav-link" onClick={closeMenu}>{currentContent.contact}</NavHashLink>
             </nav>
 
             <div className="flex items-center gap-4">
                 <DownloadCVButton />
                 <ThemeSwitcher />
                 <LanguageSelector />
+
+                <button 
+                    className="hamburger-menu"
+                    onClick={() => setIsMenuOpen(!isMenuOpen)} 
+                    aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}>    
+                </button>
             </div>
         </header>
     );
