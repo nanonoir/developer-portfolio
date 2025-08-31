@@ -2,8 +2,7 @@ import { useContext } from "react";
 import { LanguageContext } from "../../../context";
 import ScrollAnimation from "react-animate-on-scroll";
 import { NavHashLink } from "react-router-hash-link";
-import linkedinIcon from '../../assets/icons/linkedin.svg';
-import githubIcon from '../../assets/icons/github.svg';
+import { githubIcon, linkedinIcon} from '../../../assets/icons/index';
 import Hi from '../../assets/gifs/Hi.gif'
 
 
