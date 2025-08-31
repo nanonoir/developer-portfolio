@@ -1,7 +1,7 @@
 import type { Language, AboutContent } from "../types";
 import * as Icons from '../assets/icons';
 
-export const content: Record<Language, AboutContent> = {
+export const aboutData: Record<Language, AboutContent> = {
     es: {
         about: 'Sobre mi',
         intro: '¡Hola! Soy Nahuel, un apasionado desarrollador de software enfocado en la creación de aplicaciones web y móviles. Me especializo en construir soluciones de software escalables y de fácil mantenimiento.',

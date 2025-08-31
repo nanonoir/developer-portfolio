@@ -6,3 +6,8 @@ export type Project = {
   githubLink: string;
   demoLink?: string; 
 };
+
+export type ProjectSectionContent = {
+  title: string;
+  projects: Project[];
+}

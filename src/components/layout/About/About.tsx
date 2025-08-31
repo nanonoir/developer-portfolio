@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import { LanguageContext } from "../../../context";
 import ScrollAnimation from "react-animate-on-scroll";
-import { content, mainSkills, secondarySkills } from "../../../data";
+import { aboutData, mainSkills, secondarySkills } from "../../../data";
 
 
 export const About = () => {
     const { language } = useContext(LanguageContext);
-    const currentContent = content[language];
+    const currentContent = aboutData[language];
 
     return (
         <section id="about" className="about-container">
