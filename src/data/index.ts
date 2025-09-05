@@ -1,3 +1,6 @@
+export * from './header.data'
+export * from './hero.data'
 export * from './about.data'
 export * from './project.data'
 export * from './contact.data'
+export * from './footer.data'

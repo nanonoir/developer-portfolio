@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { LanguageContext } from "../../../context";
-import { projectContent } from "../../../data";
+import { projectData } from "../../../data";
 import { ProjectCard } from "../../ui/ProjectCard/ProjectCard";
 
 export const ProjectSection = () => {
     const { language } = useContext(LanguageContext);
-    const currentContent = projectContent[language];
+    const currentContent = projectData[language];
 
     return (
         <section id="projects">

@@ -1,27 +1,15 @@
 import { useContext, useState } from "react";
-import type { Language, NavContent } from "../../../types";
 import { LanguageContext } from "../../../context";
 import { ThemeSwitcher } from "../../theme";
 import { LanguageSelector } from "../../language";
 import { NavHashLink } from "react-router-hash-link";
 import { DownloadCVButton } from "../../ui/DownloadCVButton/DownloadCVButton";
+import { headerData } from "../../../data";
 
-const content: Record<Language, NavContent> = {
-    es: {
-        about: 'Sobre Mí',
-        portfolio: 'Portafolio',
-        contact: 'Contacto'
-    },
-    en: {
-        about: 'About',
-        portfolio: 'Portfolio',
-        contact: 'Contact'
-    }
-};
 
 export const Header = () => {
     const { language } = useContext(LanguageContext);
-    const currentContent = content[language];
+    const currentContent = headerData[language];
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const closeMenu = () => {

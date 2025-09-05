@@ -4,28 +4,12 @@ import ScrollAnimation from "react-animate-on-scroll";
 import { NavHashLink } from "react-router-hash-link";
 import { githubIcon, linkedinIcon} from '../../../assets/icons/index';
 import Hi from '../../assets/gifs/Hi.gif'
+import { heroData } from "../../../data";
 
-
-const content = {
-    es: {
-        greeting: 'Hola',
-        intro: 'soy',
-        name: 'Nahuel Nicolas Noir',
-        role: 'Desarrollador de Software | Full Stack Developer',
-        contact: 'Contáctame'
-    },
-    en: {
-        greeting: 'Hello',
-        intro: "I'm",
-        name: 'Nahuel Nicolas Noir',
-        role: 'Software Developer | Full Stack Developer',
-        contact: 'Contact Me'
-    }
-};
 
 export const HeroSection = () => {
     const { language } = useContext(LanguageContext);
-    const currentContent = content[language];
+    const currentContent = heroData[language];
 
     return (
         

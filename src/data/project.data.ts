@@ -1,7 +1,7 @@
 import type { Language } from "../types";
 import type { ProjectSectionContent } from "../types/project.types";
 
-export const projectContent: Record<Language, ProjectSectionContent> = {
+export const projectData: Record<Language, ProjectSectionContent> = {
     es: {
             title: 'Mis Proyectos',
             projects: [
