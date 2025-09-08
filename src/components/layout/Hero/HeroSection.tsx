@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { LanguageContext } from "../../../context";
-import ScrollAnimation from "react-animate-on-scroll";
-import { NavHashLink } from "react-router-hash-link";
+import { motion } from 'framer-motion'
 import { githubIcon, linkedinIcon} from '../../../assets/icons/index';
-import Hi from '../../assets/gifs/Hi.gif'
 import { heroData } from "../../../data";
+import { fadeInRight, fadeInUp, mainContainer } from "../../../animations/variants";
+import { NavHashLink } from "react-router-hash-link";
+import illustrationHero from '../../../assets/imgs/illustrationHero.png'
 
 
 export const HeroSection = () => {
@@ -12,40 +13,54 @@ export const HeroSection = () => {
     const currentContent = heroData[language];
 
     return (
-        
         <section id="home" className="hero-container">
-            <div className="hero-text">
-                <ScrollAnimation animateIn="fadeInUp">
-                    <p>{currentContent.greeting} <img src={Hi} alt="Hi" width="20px" />, {currentContent.intro} </p>
-                </ScrollAnimation>
+            <motion.div
+                className="hero-text"
+                variants={mainContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false }}
+            >
+                <motion.p variants={fadeInUp}>
+                    {currentContent.greeting}, {currentContent.intro}
+                </motion.p>
 
-                <ScrollAnimation animateIn="fadeInUp" delay={200}>
-                    <h1>{currentContent.name}</h1>
-                </ScrollAnimation>
+                <motion.h1 variants={fadeInUp}>
+                    {currentContent.name}
+                </motion.h1>
 
-                
-                <ScrollAnimation animateIn="fadeInUp" delay={400}>
-                    <h3>{currentContent.role}</h3>
-                </ScrollAnimation>
+                <motion.h3 variants={fadeInUp}>
+                    {currentContent.role}
+                </motion.h3>
 
-                
-                <ScrollAnimation animateIn="fadeInUp" delay={600}>
-                      <NavHashLink smooth to="#contact" className="button">
-                            {currentContent.contact}
-                      </NavHashLink>
-                </ScrollAnimation>
+                <motion.div variants={fadeInUp}>
+                    <NavHashLink smooth to="#contact" className="button">
+                        {currentContent.contact}
+                    </NavHashLink>
+                </motion.div>
 
-                <ScrollAnimation animateIn="fadeInUp" delay={800}>
+                <motion.div variants={fadeInUp}>
                     <div className="social-media">
-                                <a href="https://www.linkedin.com/in/nahuelnicolasnoir/" target="_blank" rel="noreferrer">
-                                    <img src={linkedinIcon} alt="Linkedin" />
-                                </a>
-                                <a href="https://github.com/nanonoir" target="_blank" rel="noreferrer">
-                                    <img src={githubIcon} alt="Github" />
-                                </a>   
+                        <a href="https://www.linkedin.com/in/nahuelnicolasnoir/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                            <img src={linkedinIcon} alt="Linkedin" />
+                        </a>
+                        <a href="https://github.com/nanonoir" target="_blank" rel="noreferrer" aria-label="GitHub">
+                            <img src={githubIcon} alt="Github" />
+                        </a>   
                     </div>
-                </ScrollAnimation>
-            </div>
+                </motion.div>
+            </motion.div>
+
+            <motion.div
+                className="hero-illustration-container"
+                variants={fadeInRight}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false }}
+            >
+                <img src={illustrationHero} alt="Developer Working at Desk Illustration" className="hero-illustration"></img>
+            </motion.div>
+
         </section>
-    );
+    );    
 };

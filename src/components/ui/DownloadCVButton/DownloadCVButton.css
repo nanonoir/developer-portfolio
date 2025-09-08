@@ -1,7 +1,5 @@
-.button-resume {
-  @apply font-bold py-2 px-4 rounded-lg transition-transform duration-200;
-  
-  @apply bg-sky-600 text-white;
-
-  @apply hover:bg-sky-500 hover:scale-105;
+.button-cv {
+    @apply font-display text-white bg-sky-600
+    rounded-xl text-center px-5 py-2.5 me-2 mb-2
+    hover:bg-sky-500 scale-105 transition-transform
 }

@@ -1,0 +1,50 @@
+.about-container {
+  @apply container mx-auto px-4 py-16 text-left;
+}
+
+.about-title {
+  @apply text-5xl mb-8 text-sky-400;
+}
+
+.about-text {
+  @apply mb-8 text-2xl w-full md:w-1/2;
+}
+
+.education-title, .experience-title, .skills-title {
+  @apply text-4xl mb-4 text-sky-400;
+}
+
+.experience-title {
+  @apply mt-4;
+}
+.skills-title {
+  @apply mt-8 mb-6;
+}
+
+.degree, .role {
+  @apply text-3xl mb-1;
+}
+
+.institution, .company {
+  @apply text-xl;
+}
+
+.details {
+  @apply text-base ml-70 text-sky-200;
+}
+
+.skills-grid {
+  @apply mt-8 grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-4 justify-items-center md:w-1/2;
+}
+
+.skill-item img {
+  @apply w-12 h-12 transition-transform duration-200;
+}
+
+.skill-item:hover img {
+  @apply scale-110;
+}
+
+.about-container h4 {
+  @apply mt-12 text-2xl;
+}

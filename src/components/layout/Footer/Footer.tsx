@@ -2,8 +2,7 @@ import { useContext } from "react"
 import { LanguageContext } from "../../../context"
 import { footerData } from "../../../data/footer.data";
 import { NavHashLink } from "react-router-hash-link";
-import { githubIcon, linkedinIcon, reactIcon, tailwindIcon, typescriptIcon } from "../../../assets/icons";
-import whatsAppIcon from '../../assets/gifs/whatsAppIcon.gif'
+import { githubIcon, linkedinIcon, reactIcon, tailwindIcon, typescriptIcon, whatsappIcon } from "../../../assets/icons";
 
 
 export const Footer =  () => {
@@ -40,7 +39,7 @@ export const Footer =  () => {
                         <img src={githubIcon} alt="GitHub" />
                     </a>
                     <a href={currentContent.socialLinks.whatsapp} target="_blank" rel="noreferrer" aria-label="WhatsApp">
-                        <img src={whatsAppIcon} alt="WhatsApp" />
+                        <img src={whatsappIcon} alt="WhatsApp" />
                     </a>
                 </div>
             </div>

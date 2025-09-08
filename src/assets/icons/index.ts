@@ -16,6 +16,7 @@ import reactIcon from './react.svg';
 import reactNativeIcon from './reactnative.svg';
 import tailwindIcon from './tailwind.svg';
 import typescriptIcon from './typescript.svg';
+import whatsappIcon from './whatsappIcon.svg';
 
 export {
   arduinoIcon,
@@ -36,4 +37,5 @@ export {
   reactNativeIcon,
   tailwindIcon,
   typescriptIcon,
+  whatsappIcon,
 };

@@ -10,19 +10,22 @@ export const LanguageSelector = () => {
     };
 
     return (
-        <>
-        <button
-            onClick={() => handleLanguageChange('es')}
-            disabled={language === 'es'}
-        >
+        <div className="language-selector">
+            <button
+                onClick={() => handleLanguageChange('es')}
+                disabled={language === 'es'}
+                className="language-button"
+            >
             ES
-        </button>
-        <button
-            onClick={() => handleLanguageChange('en')}
-            disabled={language === 'en'}
-        >
+            </button>
+            <button
+                onClick={() => handleLanguageChange('en')}
+                disabled={language === 'en'}
+                className="language-button"
+            >
             EN
-        </button>
-            </>
+            </button>
+        </div>
+
     );
 };

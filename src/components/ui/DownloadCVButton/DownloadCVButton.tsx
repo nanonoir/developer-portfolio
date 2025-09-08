@@ -15,7 +15,7 @@ export const DownloadCVButton = () => {
       download="CV_Nahuel_Noir_EN.pdf"
       target="_blank" 
       rel="noopener noreferrer"
-      className="button-resume"
+      className="button-cv"
     >
       {content[language]}
     </a>

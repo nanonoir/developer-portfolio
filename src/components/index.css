@@ -1,0 +1,9 @@
+@import './layout/Header/Header.css';
+@import './layout/About/About.css';
+@import './layout/Footer/Footer.css';
+@import './layout/Hero/HeroSection.css';
+@import './layout/Project/ProjectSection.css';
+@import './layout/Contact/ContactForm.css';
+@import './ui/ProjectCard/ProjectCard.css';
+@import './ui/DownloadCVButton/DownloadCVButton.css';
+@import '../components/language/LanguageSelector.css';

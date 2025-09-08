@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { LanguageContext } from "../../../context";
-import ScrollAnimation from "react-animate-on-scroll";
 import { aboutData, mainSkills, secondarySkills } from "../../../data";
-
+import { motion } from 'framer-motion';
+import { mainContainer, fadeInLeft, secondaryContainer } from "../../../animations/variants";
 
 export const About = () => {
     const { language } = useContext(LanguageContext);
@@ -10,64 +10,45 @@ export const About = () => {
 
     return (
         <section id="about" className="about-container">
-            <ScrollAnimation animateIn="fadeInLeft">
-                <h2>{currentContent.about}</h2>
-            </ScrollAnimation>
-
-            {/* <ScrollAnimation animateIn="fadeInRight" delay={200}>
-                <div className="about-image-column">
-                    <img src={devFoto} alt="Nahuel Nicolas Noir" /> Note: in a next version i put a image of me here
-                </div>
-            </ScrollAnimation> */}
-            
-            <ScrollAnimation animateIn="fadeInLeft" delay={200}>
-                <div className="about-text">
-                    <p>{currentContent.intro}</p>
-                    <p>{currentContent.made}</p>
-                </div>
-            </ScrollAnimation>
-
-            <div className="about-details">
-                <ScrollAnimation animateIn="fadeInLeft" delay={400}>
-                    <div className="education-block">
-                        <h3>{currentContent.education.title}</h3>
-                        <p className="degree">{currentContent.education.degree}</p>
-                        <p className="institution">{currentContent.education.institution}</p>
-                        <p className="details">{currentContent.education.details}</p>
-                    </div>
-                </ScrollAnimation>
-
-                <ScrollAnimation animateIn="fadeInLeft" delay={600}>
-                    <div className="experience-block">
-                        <h3>{currentContent.experience.title}</h3>
-                        <p className="role">{currentContent.experience.role}</p>
-                        <p className="company">{currentContent.experience.company}</p>
-                        <p className="details">{currentContent.experience.details}</p>
-                    </div>
-                </ScrollAnimation>
-            </div>
-
-            <div className="skills-section">
-                <h3>{currentContent.skills}</h3>
-                    <div className="skills-grid">
-                        {mainSkills.map((skill, index) => (
-                        <ScrollAnimation
-                            animateIn="fadeInUp"
-                            delay={index * 100}
-                            key={skill.name}
-                            offset={50}
-                        >
-                            <div className="skill-item">
-                                <img src={skill.icon} alt={skill.name} />
-                            </div>
-                        </ScrollAnimation>
-                        ))}
-                    </div>
+            <motion.div
+              variants={mainContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.1 }}
+            >
+                <motion.h2 variants={fadeInLeft} className="about-title">{currentContent.about}</motion.h2>
                 
-                <ScrollAnimation animateIn="fadeInLeft" delay={1000}>
-                    <h4>{`${currentContent.secondarySkills}: ${secondarySkills.join(', ')}`}</h4>
-                </ScrollAnimation>
-            </div>
+                <motion.p variants={fadeInLeft} className="about-text">{currentContent.intro}</motion.p>
+                <motion.p variants={fadeInLeft} className="about-text">{currentContent.made}</motion.p>
+
+                <motion.h3 variants={fadeInLeft} className="education-title">{currentContent.education.title}</motion.h3>
+                <motion.p variants={fadeInLeft} className="degree">{currentContent.education.degree}</motion.p>
+                <motion.p variants={fadeInLeft} className="institution">{currentContent.education.institution}</motion.p>
+                <motion.p variants={fadeInLeft} className="details">{currentContent.education.details}</motion.p>
+
+                <motion.h3 variants={fadeInLeft} className="experience-title">{currentContent.experience.title}</motion.h3>
+                <motion.p variants={fadeInLeft} className="role">{currentContent.experience.role}</motion.p>
+                <motion.p variants={fadeInLeft} className="company">{currentContent.experience.company}</motion.p>
+                <motion.p variants={fadeInLeft} className="details">{currentContent.experience.details}</motion.p>
+
+                <motion.h3 variants={fadeInLeft} className="skills-title">{currentContent.skills}</motion.h3>
+                
+                <motion.div variants={secondaryContainer} className="skills-grid">
+                    {mainSkills.map((skill) => (
+                        <motion.div 
+                            variants={fadeInLeft}
+                            className="skill-item"
+                            key={skill.name}
+                        >
+                            <img src={skill.icon} alt={skill.name} />
+                        </motion.div>
+                    ))}
+                </motion.div>
+                
+                <motion.h4 variants={fadeInLeft}>
+                    {`${currentContent.secondarySkills} ${secondarySkills.join(', ')}.`}
+                </motion.h4>
+            </motion.div>
         </section>
     );
 };

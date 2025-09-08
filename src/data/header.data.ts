@@ -1,6 +1,6 @@
-import type { Language, NavContent } from "../types";
+import type { Language, headerContent} from "../types";
 
-export const headerData: Record<Language, NavContent> = {
+export const headerData: Record<Language, headerContent> = {
     es: {
         about: 'Sobre Mí',
         portfolio: 'Portafolio',

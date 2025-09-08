@@ -1,27 +1,24 @@
 .header-container {
-  @apply flex justify-between items-center p-4 sm:p-6 transition-colors duration-300;
+  @apply  fixed top-0 left-25 right-25 z-50 h-20
+  font-display flex justify-between items-center p-4 sm:p-6 transition-colors duration-300;
 }
 
 .header-container {
-  @apply bg-gray-100 text-gray-800;
+  @apply bg-zinc-300 text-gray-800;
 }
 
 .dark .header-container {
-  @apply bg-gray-900 text-gray-100;
+  @apply bg-zinc-900 text-gray-100;
 }
 
 .header-nav {
   @apply hidden sm:flex items-center gap-4;
 }
 
+.nav-logo {
+  @apply text-4xl font-display
+}
+
 .nav-link {
   @apply hover:text-sky-500;
-}
-
-.dark .nav-link {
-  @apply dark:hover:text-sky-400;
-}
-
-.header-title {
-  @apply font-bold text-xl;
 }

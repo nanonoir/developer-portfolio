@@ -17,28 +17,24 @@ export const Header = () => {
     };
 
     return (
-        <header className={`header-container`}>
-            <NavHashLink smooth to="#home" className="nav-link">
+        <header className="header-container">
+            <NavHashLink smooth to="#home" className="nav-logo">
                 {"<Nahuel Nicolas Noir />"}
             </NavHashLink>
 
             <nav className="header-nav">
+                <LanguageSelector />
+                <ThemeSwitcher />
                 <NavHashLink smooth to="#about" className="nav-link" onClick={closeMenu}>{currentContent.about}</NavHashLink>
                 <NavHashLink smooth to="#portfolio" className="nav-link" onClick={closeMenu}>{currentContent.portfolio}</NavHashLink>
                 <NavHashLink smooth to="#contact" className="nav-link" onClick={closeMenu}>{currentContent.contact}</NavHashLink>
-            </nav>
-
-            <div className="flex items-center gap-4">
                 <DownloadCVButton />
-                <ThemeSwitcher />
-                <LanguageSelector />
-
                 <button 
                     className="hamburger-menu"
                     onClick={() => setIsMenuOpen(!isMenuOpen)} 
                     aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}>    
                 </button>
-            </div>
+            </nav>
         </header>
     );
 };
