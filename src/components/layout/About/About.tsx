@@ -3,15 +3,17 @@ import { LanguageContext } from "../../../context";
 import { aboutData, mainSkills, secondarySkills } from "../../../data";
 import { motion } from 'framer-motion';
 import { mainContainer, fadeInLeft, secondaryContainer } from "../../../animations/variants";
+import { useScrollDirection } from "../../../hooks/useScrollDirection";
 
 export const About = () => {
     const { language } = useContext(LanguageContext);
+    const scrollDirection = useScrollDirection();
     const currentContent = aboutData[language];
 
     return (
         <section id="about" className="about-container">
             <motion.div
-              variants={mainContainer}
+              variants={mainContainer(scrollDirection)}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.1 }}

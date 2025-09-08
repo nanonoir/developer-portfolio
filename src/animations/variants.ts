@@ -1,12 +1,15 @@
-export const mainContainer = {
+import type { Direction } from "../types";
+
+export const mainContainer = (direction: Direction) => ({
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.4,
-    }
+      staggerChildren: 0.3,
+      staggerDirection: direction === 'down' ? 1 : -1,
+    } as const,
   }
-};
+});
 
 export const secondaryContainer = {
   hidden: { opacity: 0 },

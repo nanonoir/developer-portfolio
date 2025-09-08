@@ -39,7 +39,6 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
         }
         setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
     };
-    console.log('ThemeProvider se está renderizando. El tema es:', theme);
 
     return (
         <ThemeContext.Provider value={{ theme, toggleTheme}}>
