@@ -1,59 +1,65 @@
-import { useState } from "react";
-import { type ChangeEventTarget, type SubmissionStatus } from "../types/contact.types";
+import React, { useState } from "react";
+import type { FormErrors, ChangeEventTarget, SubmissionStatus } from "../types/contact.types";
+import validator from 'validator';
+
+console.log("Prueba de email válido (debe ser true):", validator.isEmail('test@test.com'));
+console.log("Prueba de email inválido (debe ser false):", validator.isEmail('@gmail.com'));
 
 export const useContactForm = () => {
     const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = React.useState({
         email: '',
         message: ''
     });
-    const [result, setResult] = useState<SubmissionStatus>(null);
-    const [token, setToken] = useState<string>("");
+    const [errors, setErrors] = useState<FormErrors>({ email: ''});
+    const [result, setResult] = React.useState<SubmissionStatus>(null);
 
     const handleChange = (e: React.ChangeEvent<ChangeEventTarget>) => {
+        const { name, value } = e.target;
+
         setFormData({
             ...formData,
-            [e.target.name]: e.target.value
+            [name]: value
         });
+
+        if (name === 'email') {
+            if (!validator.isEmail(formData.email)) {
+                setErrors( {...errors, email: 'Email not valid'});
+            } else {
+                setErrors({ ...errors, email: ''})
+            }
+        }
     };
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+    const handleSubmit = async (event: any) => {
+        event.preventDefault();
         setResult("sending");
+        const formData = new FormData(event.target);
 
-        const form = e.target as HTMLFormElement;
-        const data = new FormData(form);
+        formData.append("access_key", ACCESS_KEY);
 
-        data.append("access_key", ACCESS_KEY);
-        data.append("botcheck", token);
+        const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+        });
 
-        try {
-            const response = await fetch("https://api.web3forms.com/submit", {
-                 method: "POST",
-                 body: data
-                });
+        const data = await response.json();
 
-            const json = await response.json();
-
-            if (json.success) {
-                setResult("success");
-                form.reset();
-                setFormData({email: '', message: ''});
-            } else {
-                setResult('error');
-            }
-        } catch (error) {
-            setResult('error');
+        if (data.success) {
+        setResult("success");
+        event.target.reset();
+        } else {
+        console.log("Error", data.message);
+        setResult("error");
         }
     };
 
     return {
-        formData,
         result,
-        token,
-        setToken,
+        handleSubmit,
+        formData,
         handleChange,
-        handleSubmit
+        errors
     };
 };

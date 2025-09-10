@@ -1,5 +1,5 @@
 .about-container {
-  @apply container mx-auto px-4 py-16 text-left;
+  @apply container mb-30 mx-auto px-4 py-16 text-left;
 }
 
 .about-title {

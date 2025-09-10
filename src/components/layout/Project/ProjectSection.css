@@ -1,0 +1,12 @@
+.projects {
+  @apply container mb-60 mx-auto px-4 py-16 text-center;
+}
+
+.project-section-title {
+  @apply text-center text-6xl mb-8 text-sky-400;
+}
+
+.projects-grid {
+  @apply grid gap-8 mt-20 mb-30
+  grid-cols-1 md:grid-cols-2 lg:grid-cols-2;
+}

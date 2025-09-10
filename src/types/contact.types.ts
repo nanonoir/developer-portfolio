@@ -2,6 +2,10 @@ export type SubmissionStatus = 'sending' | 'success' | 'error' | null;
 
 export type ChangeEventTarget = HTMLInputElement | HTMLTextAreaElement;
 
+export type FormErrors = {
+    email?: string;
+};
+
 export type ContactContent = {
   title: string;
   form: {

@@ -1,0 +1,43 @@
+.project-card {
+  @apply rounded-xl overflow-hidden shadow-lg transition-all duration-300 bg-zinc-800 text-left flex flex-col;
+}
+
+.project-card:hover {
+  @apply transform -translate-y-2 shadow-2xl;
+}
+
+.project-card-content {
+  @apply p-6 flex flex-col flex-grow;
+}
+
+.card-title {
+  @apply text-4xl mb-5 font-display;
+}
+
+.card-description {
+  @apply text-xl mb-4 flex-grow;
+}
+
+.card-img {
+  @apply w-full h-auto rounded-2xl mb-5;
+}
+
+.technologies-list {
+  @apply flex flex-wrap gap-2 mb-4 text-xl;
+}
+
+.technology {
+  @apply px-3 py-1 rounded-full bg-sky-900;
+}
+
+.project-links {
+  @apply flex justify-between items-center mt-5 px-6 pb-6;
+}
+
+.card-git, .card-link {
+  @apply w-12 h-12 transition-transform duration-200;
+}
+
+.card-git:hover, .card-link:hover {
+  @apply scale-110;
+}

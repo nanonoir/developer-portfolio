@@ -9,7 +9,7 @@ export const ProjectSection = () => {
 
     return (
         <section id="projects">
-            <h2>{currentContent.title}</h2>
+            <h2 className="project-section-title">{currentContent.title}</h2>
 
             <div className="projects-grid">
                 {currentContent.projects.map(project => (

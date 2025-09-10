@@ -1,0 +1,36 @@
+.footer-container {
+  @apply w-full py-6 text-sm;
+  @apply bg-zinc-900 text-gray-100;
+}
+
+.footer-content {
+  @apply container mx-auto flex justify-between items-center;
+}
+
+.footer-nav {
+  @apply flex gap-4;
+}
+
+.footer-nav a {
+  @apply hover:text-sky-400 transition-colors;
+}
+
+.footer-credits {
+  @apply flex items-center gap-2;
+}
+
+.footer-credits img {
+  @apply w-5 h-5;
+}
+
+.footer-socials {
+  @apply flex gap-4;
+}
+
+.footer-socials img {
+  @apply w-6 h-6 transition-transform duration-200;
+}
+
+.footer-socials a:hover img {
+  @apply scale-110;
+}

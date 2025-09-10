@@ -1,72 +1,71 @@
-import { useContext } from "react"
-import { LanguageContext } from "../../../context"
-import { useContactForm } from "../../../hooks/useContactForm";
+import { useContext } from "react";
+import { LanguageContext } from "../../../context";
 import { contactData } from "../../../data";
-import { Turnstile } from "@marsidev/react-turnstile";
+import { useContactForm } from "../../../hooks/useContactForm";
+import { getResultMessage } from "../../../utilities/contact.utils";
 
 export const ContactForm = () => {
     const { language } = useContext(LanguageContext);
     const currentContent = contactData[language];
 
     const {
-        formData, 
         result,
-        token,
-        setToken,
+        handleSubmit,
+        formData,
         handleChange,
-        handleSubmit
+        errors
     } = useContactForm();
-
-    const getResultMessage = () => {
-        if (result === 'success') return currentContent.result.success;
-        if (result === 'error') return currentContent.result.error;
-        return null;
-    };
 
     return (
         <section id="contact" className="contact-container">
             <h2>{currentContent.title}</h2>
-            
+
             <form onSubmit={handleSubmit} className="contact-form">
                 <input
-                 type="email"
-                 name="email"
-                 value={formData.email}
-                 onChange={handleChange}
-                 placeholder={currentContent.form.placeholderEmail}
-                 className="contact-input contact-email"
-                 id="contact-email-input"
-                 required 
+                    type="checkbox"
+                    name="botcheck"
+                    style={{ display: 'none' }} 
+                />
+
+                {errors.email && <span className="error-message">{errors.email}</span>}
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder={currentContent.form.placeholderEmail}
+                    className="contact-input contact-email"
+                    id="contact-email-input"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required 
                 />
                 <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder={currentContent.form.placeholderMessage}
-                className="contact-input contact-message"
-                id="contact-message-input"
-                rows={5}
-                required />
+                    name="message"
+                    placeholder={currentContent.form.placeholderMessage}
+                    className="contact-input contact-message"
+                    id="contact-message-input"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={5}
+                    required 
+                />
+                
+                <button 
+                    type="submit"
+                    className="contact-button"
+                    disabled={result === 'sending' || !formData.email || !formData.message || !(!errors.email) }
+                >
+                    {currentContent.form.buttonText}
+                </button>
 
-            <Turnstile
-            siteKey = {import.meta.env.VITE_TURNSTILE_ACCES_KEY}
-            onSuccess={(token) => setToken(token)}
-            />
-
-            <button
-             type="submit"
-             disabled={!token || result === 'sending'}
-             className="contact-button"
-             >
-                {result === 'sending' ? currentContent.form.buttonSending : currentContent.form.buttonText}
-             </button>
             </form>
-
+            
             {result && result !== 'sending' && (
-                <div className="submission-result">
-                    <pre>{getResultMessage()}</pre>
+                <div className={`submission-result ${result}`}>
+                    <pre>{getResultMessage(result, currentContent)}</pre>
                 </div>
             )}
+
         </section>
     );
 };
