@@ -1,5 +1,0 @@
-.button-cv {
-    @apply font-display text-white bg-sky-600
-    rounded-xl text-center px-5 py-2.5 me-2 mb-2
-    hover:bg-sky-500 scale-105 transition-transform
-}

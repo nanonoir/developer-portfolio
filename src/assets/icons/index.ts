@@ -1,38 +1,44 @@
-import arduinoIcon from './arduino.svg';
-import cplusplusIcon from './cplusplus.svg';
-import css3Icon from './css3.svg';
 import dockerIcon from './docker.svg';
+import closeMenuIcon from './closeMenu.svg';
+import closeMenuDarkIcon from './closeMenuDark.svg';
 import gitIcon from './git.svg';
 import githubIcon from './github.svg';
-import htmlIcon from './html5.svg';
+import githubWhiteIcon from './githubWhite.svg';
 import javascriptIcon from './javascript.svg';
 import jestIcon from './jest.svg';
+import jiraIcon from './jira.svg';
 import linkedinIcon from './linkedin.svg';
+import menuIcon from './menu.svg';
+import menuDarkIcon from './menuDark.svg';
+import mongodbIcon from './mongodb.svg';
+import mySqlIcon from './mySql.svg';
 import nodejsIcon from './nodejs.svg';
-import phpIcon from './php.svg';
 import postgresqlIcon from './postgresql.svg';
-import pythonIcon from './python.svg';
+import postmanIcon from './postman.svg';
 import reactIcon from './react.svg';
 import reactNativeIcon from './reactnative.svg';
 import tailwindIcon from './tailwind.svg';
 import typescriptIcon from './typescript.svg';
-import whatsappIcon from './whatsappIcon.svg';
+import whatsappIcon from './whatsapp.svg';
 
 export {
-  arduinoIcon,
-  cplusplusIcon,
-  css3Icon,
+  closeMenuDarkIcon,
+  closeMenuIcon,
   dockerIcon,
   gitIcon,
   githubIcon,
-  htmlIcon,
+  githubWhiteIcon,
   javascriptIcon,
   jestIcon,
+  jiraIcon,
   linkedinIcon,
+  menuDarkIcon,
+  menuIcon,
+  mongodbIcon,
+  mySqlIcon,
   nodejsIcon,
-  phpIcon,
   postgresqlIcon,
-  pythonIcon,
+  postmanIcon,
   reactIcon,
   reactNativeIcon,
   tailwindIcon,

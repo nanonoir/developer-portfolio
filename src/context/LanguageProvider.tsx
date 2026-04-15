@@ -1,7 +1,6 @@
-import { createContext, useState} from "react";
-import { type LanguageContextType, type Language, type LanguageProviderProps } from "../types";
-
-export const LanguageContext = createContext<LanguageContextType>({} as LanguageContextType);
+import { useState} from "react";
+import { type Language, type LanguageProviderProps } from "../types";
+import { LanguageContext } from "./LanguageContext";
 
 export const LanguageProvider= ({ children }: LanguageProviderProps) => {
     const [language, setLanguage] = useState<Language>(() => {

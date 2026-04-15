@@ -1,5 +1,5 @@
-import { useContext } from "react"
-import { LanguageContext } from "../../context"
+import { useContext } from "react";
+import { LanguageContext } from "../../context";
 import type { Language } from "../../types";
 
 export const LanguageSelector = () => {
@@ -9,23 +9,31 @@ export const LanguageSelector = () => {
         setLanguage(lang);
     };
 
+    const buttonClassName = (lang: Language) =>
+        `rounded-lg px-3 py-2 text-sm transition-colors ${
+            language === lang
+                ? "bg-accent text-on-accent"
+                : "text-text hover:bg-background"
+        }`;
+
     return (
-        <div className="language-selector">
+        <div className="flex items-center rounded-xl border border-border bg-surface p-1">
             <button
-                onClick={() => handleLanguageChange('es')}
-                disabled={language === 'es'}
-                className="language-button"
+                type="button"
+                onClick={() => handleLanguageChange("es")}
+                disabled={language === "es"}
+                className={buttonClassName("es")}
             >
-            ES
+                ES
             </button>
             <button
-                onClick={() => handleLanguageChange('en')}
-                disabled={language === 'en'}
-                className="language-button"
+                type="button"
+                onClick={() => handleLanguageChange("en")}
+                disabled={language === "en"}
+                className={buttonClassName("en")}
             >
-            EN
+                EN
             </button>
         </div>
-
     );
 };

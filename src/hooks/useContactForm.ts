@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import type { FormErrors, ChangeEventTarget, SubmissionStatus } from "../types/contact.types";
 import validator from 'validator';
 
-console.log("Prueba de email válido (debe ser true):", validator.isEmail('test@test.com'));
-console.log("Prueba de email inválido (debe ser false):", validator.isEmail('@gmail.com'));
-
 export const useContactForm = () => {
     const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
@@ -24,7 +21,7 @@ export const useContactForm = () => {
         });
 
         if (name === 'email') {
-            if (!validator.isEmail(formData.email)) {
+            if (!validator.isEmail(value)) {
                 setErrors( {...errors, email: 'Email not valid'});
             } else {
                 setErrors({ ...errors, email: ''})
@@ -32,10 +29,10 @@ export const useContactForm = () => {
         }
     };
 
-    const handleSubmit = async (event: any) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setResult("sending");
-        const formData = new FormData(event.target);
+        const formData = new FormData(event.currentTarget);
 
         formData.append("access_key", ACCESS_KEY);
 
@@ -48,7 +45,7 @@ export const useContactForm = () => {
 
         if (data.success) {
         setResult("success");
-        event.target.reset();
+        event.currentTarget.reset();
         } else {
         console.log("Error", data.message);
         setResult("error");

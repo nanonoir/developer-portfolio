@@ -10,7 +10,7 @@ export const aboutData: Record<Language, AboutContent> = {
             title: 'Educación',
             degree: 'Técnico en Desarrollo de Software',
             institution: 'Instituto Económico Nacional (I.E.N.)',
-            details: '2023 - 2025 (Estimado)'
+            details: '2023 - 2025 (Finalizado)'
         },
         experience: {
             title: 'Experiencia',
@@ -18,8 +18,7 @@ export const aboutData: Record<Language, AboutContent> = {
             company: 'Secretaría de Contenidos Audiovisuales',
             details: '2024 - Corrientes, Argentina'
         },
-        skills: 'Estas son mis habilidades principales:',
-        secondarySkills: 'Otras tecnologías con las que he trabajado:'
+        skills: 'Estas son mis habilidades principales:'
     },
     en: {
         about: 'About Me',
@@ -29,7 +28,7 @@ export const aboutData: Record<Language, AboutContent> = {
             title: 'Education',
             degree: 'Software Development Technician',
             institution: 'National Economic Institute (I.E.N.)',
-            details: '2023 - 2025 (Estimated)'
+            details: '2023 - 2025 (Finished)'
         },
         experience: {
             title: 'Experience',
@@ -37,21 +36,23 @@ export const aboutData: Record<Language, AboutContent> = {
             company: 'Audiovisual Content Secretariat',
             details: '2024 - Corrientes, Argentina'
         },
-        skills: 'Here are my main skills:',
-        secondarySkills: "Other technologies I've worked with:"
+        skills: 'Here are my main skills:'
     }
 };
 
 export const mainSkills = [
   { name: 'React', icon: Icons.reactIcon },
+  { name: 'React Native', icon: Icons.reactNativeIcon },
   { name: 'TypeScript', icon: Icons.typescriptIcon },
   { name: 'JavaScript', icon: Icons.javascriptIcon },
   { name: 'Node.js', icon: Icons.nodejsIcon },
   { name: 'PostgreSQL', icon: Icons.postgresqlIcon },
+  { name: 'MySQL', icon: Icons.mySqlIcon },
+  { name: 'MongoDB', icon: Icons.mongodbIcon },
   { name: 'Tailwind CSS', icon: Icons.tailwindIcon },
   { name: 'Git', icon: Icons.gitIcon },
   { name: 'Docker', icon: Icons.dockerIcon },
   { name: 'Jest', icon: Icons.jestIcon },
+  { name: 'Postman', icon: Icons.postmanIcon },
+  { name: 'Jira', icon: Icons.jiraIcon },
 ];
-
-export const secondarySkills = ['Python', 'PHP', 'C++ (Arduino)'];

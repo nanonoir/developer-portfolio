@@ -1,7 +1,6 @@
-import { createContext, useState, useEffect } from 'react';
-import { type Theme, type ThemeContextType, type ThemeProviderProps } from '../types'
-
-export const ThemeContext = createContext<ThemeContextType>({} as ThemeContextType);
+import { useState, useEffect } from 'react';
+import { type Theme, type ThemeProviderProps } from '../types'
+import { ThemeContext } from './ThemeContext';
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     const [hasManuallyToggled, setHasManuallyToggled] = useState(false);
@@ -21,7 +20,6 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
         const handleChange = (e: MediaQueryListEvent) => {
-            console.log('toggleTheme fue llamado. El tema actual es:', theme);
             if (hasManuallyToggled) {
                 return;
             }

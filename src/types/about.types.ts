@@ -19,5 +19,4 @@ export type AboutContent = {
     education: EducationItem;
     experience: ExperienceItem;
     skills: string;
-    secondarySkills: string;
 };

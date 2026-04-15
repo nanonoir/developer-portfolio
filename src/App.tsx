@@ -1,4 +1,3 @@
-import './App.css'
 import { About, ContactForm, Footer, Header, HeroSection, ProjectSection } from './components'
 
 
