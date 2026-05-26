@@ -20,6 +20,8 @@ import reactNativeIcon from './reactnative.svg';
 import tailwindIcon from './tailwind.svg';
 import typescriptIcon from './typescript.svg';
 import whatsappIcon from './whatsapp.svg';
+import nextjsIcon from './nextjs.svg';
+import nestjsIcon from './nestjs.svg';
 
 export {
   closeMenuDarkIcon,
@@ -44,4 +46,6 @@ export {
   tailwindIcon,
   typescriptIcon,
   whatsappIcon,
+  nextjsIcon,
+  nestjsIcon,
 };

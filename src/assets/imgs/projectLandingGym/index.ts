@@ -1,14 +1,14 @@
-import landingAbout from "./AboutSection.PNG";
-import landingContactAndFooter from "./ContactAndFooter.PNG";
-import landingFeatures from "./FeaturesSection.PNG";
-import landingFormStepOne from "./FormStep1.PNG";
-import landingFormStepTwo from "./FormStep2.PNG";
-import landingFormStepThree from "./FormStep3.PNG";
-import landingFullContact from "./FullContact.PNG";
-import landingGymRegister from "./GymRegisterSection.PNG";
-import landingHome from "./Home.PNG";
-import landingReviews from "./ReviewsSection.PNG";
-import landingSocialMedia from "./SocialMediaSection.PNG";
+import landingAbout from "./AboutSection.avif";
+import landingContactAndFooter from "./ContactAndFooter.avif";
+import landingFeatures from "./FeaturesSection.avif";
+import landingFormStepOne from "./FormStep1.avif";
+import landingFormStepTwo from "./FormStep2.avif";
+import landingFormStepThree from "./FormStep3.avif";
+import landingFullContact from "./FullContact.avif";
+import landingGymRegister from "./GymRegisterSection.avif";
+import landingHome from "./Home.avif";
+import landingReviews from "./ReviewsSection.avif";
+import landingSocialMedia from "./SocialMediaSection.avif";
 
 export {
     landingAbout,

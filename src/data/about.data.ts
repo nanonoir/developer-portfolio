@@ -42,10 +42,12 @@ export const aboutData: Record<Language, AboutContent> = {
 
 export const mainSkills = [
   { name: 'React', icon: Icons.reactIcon },
+  { name: 'Next.js', icon: Icons.nextjsIcon },
   { name: 'React Native', icon: Icons.reactNativeIcon },
   { name: 'TypeScript', icon: Icons.typescriptIcon },
   { name: 'JavaScript', icon: Icons.javascriptIcon },
   { name: 'Node.js', icon: Icons.nodejsIcon },
+  { name: 'NestJS', icon: Icons.nestjsIcon },
   { name: 'PostgreSQL', icon: Icons.postgresqlIcon },
   { name: 'MySQL', icon: Icons.mySqlIcon },
   { name: 'MongoDB', icon: Icons.mongodbIcon },

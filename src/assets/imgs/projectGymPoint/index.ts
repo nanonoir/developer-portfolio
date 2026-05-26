@@ -1,18 +1,18 @@
-import gymBranch from "./Gym.png";
-import gymCreateRoutineStepTwo from "./CrearRutina2Dark.png";
-import gymCreateRoutineStepThree from "./CrearRutina3Dark.png";
-import gymCreateRoutine from "./CrearRutinaDark.png";
-import gymExercise from "./Ejercicio .png";
-import gymHome from "./Inicio.png";
-import gymLogin from "./Login.png";
-import gymMap from "./Mapa.png";
-import gymProfile from "./Perfil.png";
-import gymProfileStats from "./Perfil2.png";
-import gymProgress from "./Progreso.png";
-import gymExerciseProgress from "./ProgresoEjercicio.png";
-import gymRegisterStepTwo from "./Registro 2.png";
-import gymRegister from "./Registro.png";
-import gymRoutines from "./Rutinas.png";
+import gymBranch from "./Gym.avif";
+import gymCreateRoutineStepTwo from "./CrearRutina2Dark.avif";
+import gymCreateRoutineStepThree from "./CrearRutina3Dark.avif";
+import gymCreateRoutine from "./CrearRutinaDark.avif";
+import gymExercise from "./Ejercicio.avif";
+import gymHome from "./Inicio.avif";
+import gymLogin from "./Login.avif";
+import gymMap from "./Mapa.avif";
+import gymProfile from "./Perfil.avif";
+import gymProfileStats from "./Perfil2.avif";
+import gymProgress from "./Progreso.avif";
+import gymExerciseProgress from "./ProgresoEjercicio.avif";
+import gymRegisterStepTwo from "./Registro 2.avif";
+import gymRegister from "./Registro.avif";
+import gymRoutines from "./Rutinas.avif";
 
 export {
     gymBranch,
